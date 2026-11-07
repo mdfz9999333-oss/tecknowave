@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom geometric accent cuts & ribbon banner motifs matching Tecknowave Brand PDF */
+.tecknowave-gradient-orange {
+  background: linear-gradient(135deg, #F05A24 0%, #E85A1C 50%, #D94A10 100%);
+}
+
+.tecknowave-gradient-gold {
+  background: linear-gradient(135deg, #F5A623 0%, #F39C12 100%);
+}
+
+.tecknowave-badge-ribbon {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.tecknowave-diagonal-cut {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+}
+
+.tecknowave-diagonal-cut-reverse {
+  clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Concentric ring frame for PDF exact aesthetic */
+.tecknowave-concentric-ring {
+  box-shadow: 0 0 0 8px #ffffff, 0 0 0 14px #101828, 0 0 0 22px #F05A24;
+}
+
+.tecknowave-concentric-ring-gold {
+  box-shadow: 0 0 0 6px #ffffff, 0 0 0 12px #F5A623, 0 0 0 18px #F05A24;
+}
