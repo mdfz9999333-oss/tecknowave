@@ -47,7 +47,7 @@ export const COMPANY_INFO = {
   brandName: "tecknowave",
   taglineEn: "We build together",
   taglineAr: "نبني معاً",
-  logoUrl: "/assets/aistudio/WhatsApp_Image_2026-11-08_at_1.42.49_AM_ea1f433b.jpeg",
+  logoUrl: "/assets/images/tecknowave_logo.png",
   website: "www.tecknowave.com",
   email: "info@tecknowave.com",
   phone: "+966-504666251",
@@ -93,9 +93,9 @@ export const FEATURED_6_SERVICES: DepartmentService[] = [
     badgeColor: "orange",
     icon: "Snowflake",
     images: [
-      "/assets/images/service_hvac_1_1794083973951.jpg",
+      "/assets/images/service_hvac_rooftop_1794645856668.jpg",
       "/assets/images/service_hvac_coldroom_1794087099997.jpg",
-      "/assets/images/service_mechanical_1794054778800.jpg"
+      "/assets/images/service_hvac_1_1794083973951.jpg"
     ]
   },
   {
@@ -135,8 +135,8 @@ export const FEATURED_6_SERVICES: DepartmentService[] = [
     icon: "Building2",
     images: [
       "/assets/images/service_facility_mgr_1794087116361.jpg",
-      "/assets/images/service_amc_1_1794083974014.jpg",
-      "/assets/images/hero_tecknowave_building_1794054778502.jpg"
+      "/assets/images/service_automation_bms_1794645856994.jpg",
+      "/assets/images/service_amc_1_1794083974014.jpg"
     ]
   },
   {
@@ -177,7 +177,7 @@ export const FEATURED_6_SERVICES: DepartmentService[] = [
     images: [
       "/assets/images/service_mep_piping_1794087132941.jpg",
       "/assets/images/service_electrical_1794054778762.jpg",
-      "/assets/images/service_mechanical_1794054778800.jpg"
+      "/assets/images/service_hvac_rooftop_1794645856668.jpg"
     ]
   },
   {
@@ -207,8 +207,8 @@ export const FEATURED_6_SERVICES: DepartmentService[] = [
     icon: "Layout",
     images: [
       "/assets/images/service_civil_1794054780104.jpg",
-      "/assets/images/service_fitout_1_1794056102476.jpg",
-      "/assets/images/service_landscaping_1_1794056102631.jpg"
+      "/assets/images/service_joinery_fitout_1794645855631.jpg",
+      "/assets/images/service_fitout_1_1794056102476.jpg"
     ],
     equipmentEn: [
       "Precision Wood CNC Router Stations",
@@ -248,8 +248,8 @@ export const FEATURED_6_SERVICES: DepartmentService[] = [
     icon: "ShieldCheck",
     images: [
       "/assets/images/service_amc_1_1794083974014.jpg",
-      "/assets/images/service_facility_mgr_1794087116361.jpg",
-      "/assets/images/service_electrical_1794054778762.jpg"
+      "/assets/images/service_automation_bms_1794645856994.jpg",
+      "/assets/images/service_facility_mgr_1794087116361.jpg"
     ],
     equipmentEn: [
       "Digital Asset Diagnostics & CMMS Portal",
@@ -288,9 +288,9 @@ export const FEATURED_6_SERVICES: DepartmentService[] = [
     badgeColor: "grey",
     icon: "Truck",
     images: [
+      "/assets/images/service_equipment_rental_1794645856332.jpg",
       "/assets/images/service_generator_1_1794083974451.jpg",
-      "/assets/images/service_electrical_1794054778762.jpg",
-      "/assets/images/service_steel_1_1794056102688.jpg"
+      "/assets/images/service_electrical_1794054778762.jpg"
     ],
     equipmentEn: [
       "Heavy Industrial Diesel Generators (100kVA - 2000kVA)",
@@ -346,8 +346,8 @@ export const DEPARTMENTS: DepartmentService[] = [
     icon: "Zap",
     images: [
       "/assets/images/service_electrical_1794054778762.jpg",
-      "/assets/images/service_generator_1_1794083974451.jpg",
-      "/assets/images/service_facility_mgr_1794087116361.jpg"
+      "/assets/images/service_automation_bms_1794645856994.jpg",
+      "/assets/images/service_generator_1_1794083974451.jpg"
     ]
   },
   {
@@ -433,7 +433,7 @@ export const DEPARTMENTS: DepartmentService[] = [
     images: [
       "/assets/images/service_mechanical_1794054778800.jpg",
       "/assets/images/service_mep_piping_1794087132941.jpg",
-      "/assets/images/service_steel_1_1794056102688.jpg"
+      "/assets/images/service_hvac_rooftop_1794645856668.jpg"
     ]
   },
   {
@@ -475,7 +475,7 @@ export const DEPARTMENTS: DepartmentService[] = [
     icon: "Building2",
     images: [
       "/assets/images/service_civil_1794054780104.jpg",
-      "/assets/images/service_steel_1_1794056102688.jpg",
+      "/assets/images/service_equipment_rental_1794645856332.jpg",
       "/assets/images/hero_tecknowave_building_1794054778502.jpg"
     ]
   },
@@ -516,7 +516,7 @@ export const DEPARTMENTS: DepartmentService[] = [
     icon: "ShieldCheck",
     images: [
       "/assets/images/service_security_1_1794056102237.jpg",
-      "/assets/images/service_electrical_1794054778762.jpg",
+      "/assets/images/service_automation_bms_1794645856994.jpg",
       "/assets/images/service_telecom_1_1794056102582.jpg"
     ]
   },
@@ -598,7 +598,7 @@ export const DEPARTMENTS: DepartmentService[] = [
     icon: "Radio",
     images: [
       "/assets/images/service_telecom_1_1794056102582.jpg",
-      "/assets/images/service_security_1_1794056102237.jpg",
+      "/assets/images/service_automation_bms_1794645856994.jpg",
       "/assets/images/service_solar_1794054778024.jpg"
     ]
   },
@@ -639,8 +639,8 @@ export const DEPARTMENTS: DepartmentService[] = [
     icon: "Trees",
     images: [
       "/assets/images/service_landscaping_1_1794056102631.jpg",
-      "/assets/images/service_civil_1794054780104.jpg",
-      "/assets/images/hero_tecknowave_building_1794054778502.jpg"
+      "/assets/images/hero_tecknowave_building_1794054778502.jpg",
+      "/assets/images/service_civil_1794054780104.jpg"
     ]
   },
   {
@@ -679,9 +679,9 @@ export const DEPARTMENTS: DepartmentService[] = [
     badgeColor: "grey",
     icon: "Layout",
     images: [
+      "/assets/images/service_joinery_fitout_1794645855631.jpg",
       "/assets/images/service_fitout_1_1794056102476.jpg",
-      "/assets/images/service_landscaping_1_1794056102631.jpg",
-      "/assets/images/hero_tecknowave_building_1794054778502.jpg"
+      "/assets/images/service_finishing_masonry_1794645854904.jpg"
     ]
   },
   {
@@ -720,9 +720,9 @@ export const DEPARTMENTS: DepartmentService[] = [
     badgeColor: "gold",
     icon: "Sparkles",
     images: [
-      "/assets/images/service_fitout_1_1794056102476.jpg",
-      "/assets/images/service_civil_1794054780104.jpg",
-      "/assets/images/service_landscaping_1_1794056102631.jpg"
+      "/assets/images/service_finishing_masonry_1794645854904.jpg",
+      "/assets/images/service_joinery_fitout_1794645855631.jpg",
+      "/assets/images/service_fitout_1_1794056102476.jpg"
     ]
   }
 ];

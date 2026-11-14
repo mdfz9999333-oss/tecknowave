@@ -72,13 +72,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ dept, onSelect, onOpenRfq, is
       className="group bg-white rounded-3xl border-2 border-slate-200 hover:border-orange-500 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden h-full"
     >
       {/* TOP: Large Auto-sliding Image Slider with 3 Images */}
-      <div className="relative h-56 sm:h-64 bg-slate-950 overflow-hidden shrink-0">
+      <div className="relative aspect-[16/10] bg-slate-950 overflow-hidden shrink-0">
         <ServiceImageWithFallback
           src={dept.images[currentImgIndex]}
           alt={`${title} visual ${currentImgIndex + 1}`}
           title={title}
           numberBadge={dept.numberBadge}
           iconNode={iconMap[dept.icon]}
+          priority={currentImgIndex === 0}
+          showOverlay={true}
         />
 
         {/* Number Badge floating over top */}

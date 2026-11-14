@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS, PageId } from '../data/translations';
 import { COMPANY_INFO, FEATURED_6_SERVICES, PROJECTS, SATISFIED_CLIENTS } from '../data/companyData';
 import { ArrowRight, Globe, ShieldCheck, Award, ChevronRight, MapPin, Calendar, Check, Snowflake, Building2, Zap, Layout, Truck, Eye } from 'lucide-react';
 import { ServiceImageWithFallback } from '../components/ServiceImageWithFallback';
+
+const HeroEngineering3D = React.lazy(() =>
+  import('../components/HeroEngineering3D').then((m) => ({ default: m.HeroEngineering3D })),
+);
 
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
@@ -32,15 +36,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenRfqModal }
       <section className="relative pt-20 sm:pt-24 lg:pt-24 pb-12 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             
-          {/* STEP 2: IMAGE ON TOP - Full Rectangle, Clean Image (No Circle, No floating badges or text on top) */}
-          <div className="w-full overflow-hidden rounded-2xl shadow-xl border border-slate-200/80 bg-slate-900 group">
-            <img
-              src="/assets/images/hero_tecknowave_building_1794054778502.jpg"
-              alt="GG Tecknowave Corporate Building HQ"
-              className="w-full h-[260px] sm:h-[380px] md:h-[460px] lg:h-[520px] object-cover object-center group-hover:scale-[1.01] transition-transform duration-700"
-              referrerPolicy="no-referrer"
-            />
-          </div>
+          {/* STEP 2: INTERACTIVE 3D ENGINEERING VISUAL ON TOP (With instant photo fallback so initial paint never blocks) */}
+          <Suspense
+            fallback={
+              <div className="w-full overflow-hidden rounded-2xl shadow-xl border border-slate-200/80 bg-slate-900">
+                <img
+                  src="/assets/images/hero_tecknowave_building_1794054778502.jpg"
+                  alt="GG Tecknowave Corporate Building HQ"
+                  className="w-full h-[290px] sm:h-[390px] md:h-[470px] lg:h-[530px] object-cover object-center"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            }
+          >
+            <HeroEngineering3D isRtl={isRtl} />
+          </Suspense>
 
           {/* STEP 3: TEXT BELOW IMAGE - Clean White Background */}
           <div className="max-w-4xl mx-auto text-center space-y-6 pt-2">
@@ -216,19 +226,33 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenRfqModal }
                     ))}
                   </div>
 
-                  {/* 3 Images Grid */}
-                  <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-100">
-                    {dept.images.map((img, i) => (
-                      <div key={i} className="h-16 rounded-xl overflow-hidden bg-slate-900 relative">
-                        <ServiceImageWithFallback
-                          src={img}
-                          alt={`${title} thumbnail ${i + 1}`}
-                          title={title}
-                          numberBadge={dept.numberBadge}
-                          iconNode={iconMap[dept.icon]}
-                        />
-                      </div>
-                    ))}
+                  {/* Primary Lead Service Photo + 3-Image Gallery */}
+                  <div className="space-y-2 pt-2 border-t border-slate-100">
+                    <div className="relative aspect-[16/9] rounded-2xl overflow-hidden bg-slate-900 border border-slate-200/80">
+                      <ServiceImageWithFallback
+                        src={dept.images[0]}
+                        alt={`${title} main visual`}
+                        title={title}
+                        numberBadge={dept.numberBadge}
+                        iconNode={iconMap[dept.icon]}
+                        priority={true}
+                        showOverlay={true}
+                      />
+                    </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      {dept.images.map((img, i) => (
+                        <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden bg-slate-900 relative border border-slate-200/60">
+                          <ServiceImageWithFallback
+                            src={img}
+                            alt={`${title} thumbnail ${i + 1}`}
+                            title={title}
+                            numberBadge={dept.numberBadge}
+                            iconNode={iconMap[dept.icon]}
+                            priority={i === 0}
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 

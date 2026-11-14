@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { TRANSLATIONS } from '../data/translations';
 import { DEPARTMENTS } from '../data/companyData';
 import { Wrench, ShieldCheck, ArrowRight, Check } from 'lucide-react';
+import { ServiceImageWithFallback } from '../components/ServiceImageWithFallback';
 
 interface DepartmentsPageProps {
   onOpenRfqModal: (deptId?: string) => void;
@@ -41,14 +42,15 @@ export const DepartmentsPage: React.FC<DepartmentsPageProps> = ({ onOpenRfqModal
               key={dept.id} 
               className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-orange-400 transition-all grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden"
             >
-              <div className="lg:col-span-4 h-64 sm:h-72 rounded-2xl overflow-hidden bg-slate-900 relative shadow-inner">
-                <img 
-                  src={dept.images[0]} 
-                  alt={title} 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-                  referrerPolicy="no-referrer" 
+              <div className="lg:col-span-4 aspect-[4/3] lg:h-72 lg:aspect-auto rounded-2xl overflow-hidden bg-slate-900 relative shadow-inner group">
+                <ServiceImageWithFallback
+                  src={dept.images[0]}
+                  alt={title}
+                  title={title}
+                  numberBadge={dept.numberBadge}
+                  showOverlay={true}
                 />
-                <div className="absolute top-3 left-3 tecknowave-gradient-orange text-white font-mono font-black text-xs px-3 py-1 rounded-xl shadow border border-white/20">
+                <div className="absolute top-3 left-3 z-10 tecknowave-gradient-orange text-white font-mono font-black text-xs px-3 py-1 rounded-xl shadow border border-white/20">
                   DIV-{dept.numberBadge}
                 </div>
               </div>
